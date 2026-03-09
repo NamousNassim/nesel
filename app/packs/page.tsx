@@ -1,41 +1,48 @@
 ﻿import type { Metadata } from 'next';
 import Link from 'next/link';
-import { CheckCircleIcon, ArrowUpRightIcon } from '@heroicons/react/24/outline';
+import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
 import Reveal from '@/components/site/Reveal';
 import CTASection from '@/components/site/CTASection';
+import { PlanCard } from '@/components/site/PlanCard';
 
 export const metadata: Metadata = {
   title: 'Packs',
   description:
-    'Comparez les packs NESEL pour votre implantation au Maroc : lancement, croissance et expansion avec un accompagnement sur mesure.',
+    'Comparez les packs NESEL pour votre implantation au Maroc : Silver, Golden ou Diamond avec un accompagnement premium.',
 };
 
 const packs = [
   {
-    name: 'Pack Lancement',
-    target: 'Pour démarrer rapidement et sécuriser la domiciliation.',
+    name: 'Silver',
+    variant: 'silver' as const,
+    target: 'Domiciliation essentielle et sécurisée pour lancer votre structure.',
     features: [
-      'Domiciliation commerciale + gestion du courrier',
-      'Création de société et dépôt légal',
-      'Kit administratif de démarrage',
+      'Adresse juridique + attestation rapide',
+      'Gestion et numérisation mensuelle du courrier',
+      'Accès salle de réunion 4h/mois',
+      'Support email & WhatsApp',
     ],
   },
   {
-    name: 'Pack Croissance',
-    target: 'Pour structurer les opérations et gagner en efficacité.',
+    name: 'Golden',
+    variant: 'golden' as const,
+    target: 'Domiciliation exécutive et assistance administrative renforcée.',
     features: [
-      'Domiciliation premium + salles de réunion',
-      'Support administratif mensuel',
-      'Suivi RH & reporting opérationnel',
+      'Tout le Silver + réexpédition trimestrielle incluse',
+      'Secrétariat bilingue FR/EN et prise de rendez-vous',
+      'Suivi administratif, rappels de conformité',
+      'Chargé de compte dédié (SLA 48h)',
     ],
   },
   {
-    name: 'Pack Expansion',
-    target: 'Pour les organisations multi-sites et les groupes internationaux.',
+    name: 'Diamond',
+    variant: 'diamond' as const,
+    target: 'Représentation corporate et pilotage complet pour directions exigeantes.',
     features: [
-      'Coordination multi-sites et gouvernance',
-      'Compliance avancée & veille réglementaire',
-      'Accompagnement direction & KPI sur mesure',
+      'Tout le Golden + réexpédition prioritaire illimitée',
+      'Bureaux équipés 2j/mois et salles premium',
+      'Représentation auprès des administrations',
+      'Tableau de bord mensuel et options multi-sites',
     ],
   },
 ];
@@ -62,11 +69,11 @@ export default function PacksPage() {
         <Reveal>
           <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">Packs NESEL</p>
           <h1 className="mt-3 font-display text-4xl text-[color:var(--ink)]">
-            Des packs évolutifs pour chaque phase de développement.
+            Silver, Golden ou Diamond : trois niveaux d’accompagnement premium.
           </h1>
           <p className="mt-4 max-w-3xl text-base text-[color:var(--muted)]">
-            Choisissez une formule claire et adaptez-la selon vos besoins. Chaque pack combine un socle solide et des
-            options personnalisées.
+            Choisissez la profondeur de service qui correspond à votre gouvernance : domiciliation essentielle,
+            assistance renforcée ou représentation corporate avec pilotage complet.
           </p>
           <Link
             href="/contact"
@@ -82,25 +89,15 @@ export default function PacksPage() {
         <div className="grid gap-6 lg:grid-cols-3">
           {packs.map((pack, index) => (
             <Reveal key={pack.name} delay={index * 0.08}>
-              <div className="flex h-full flex-col rounded-3xl border border-[color:var(--line)] bg-white/85 p-6 shadow-sm">
-                <h2 className="font-display text-2xl text-[color:var(--ink)]">{pack.name}</h2>
-                <p className="mt-3 text-sm text-[color:var(--muted)]">{pack.target}</p>
-                <div className="mt-6 space-y-3">
-                  {pack.features.map((feature) => (
-                    <div key={feature} className="flex items-start gap-2 text-sm text-[color:var(--muted)]">
-                      <CheckCircleIcon className="mt-0.5 h-4 w-4 text-[color:var(--accent)]" />
-                      <span>{feature}</span>
-                    </div>
-                  ))}
-                </div>
-                <Link
-                  href="/contact"
-                  className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--brand)]"
-                >
-                  Obtenir un devis
-                  <ArrowUpRightIcon className="h-4 w-4" />
-                </Link>
-              </div>
+              <PlanCard
+                variant={pack.variant}
+                name={pack.name}
+                subtitle={pack.target}
+                features={pack.features}
+                featured={pack.name === 'Golden'}
+                ctaHref="/contact"
+                ctaLabel="Obtenir un devis"
+              />
             </Reveal>
           ))}
         </div>

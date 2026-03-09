@@ -1,18 +1,22 @@
 ﻿import type { Metadata } from 'next';
-import { Manrope, Playfair_Display } from 'next/font/google';
+import { Sora, Cormorant_Garamond } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import './globals.css';
 import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
 
-const manrope = Manrope({
+const sora = Sora({
   subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-geist-sans',
+  display: 'swap',
 });
 
-const playfair = Playfair_Display({
+const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
+  weight: ['500', '600', '700'],
   variable: '--font-display',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -31,9 +35,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr">
+    <html lang="fr" suppressHydrationWarning>
       <body
-        className={`${manrope.variable} ${playfair.variable} min-h-screen font-sans text-[color:var(--ink)]`}
+        suppressHydrationWarning
+        className={`${sora.variable} ${cormorant.variable} min-h-screen font-sans text-[color:var(--ink)]`}
       >
         <Header />
         <main className="pt-20">{children}</main>
