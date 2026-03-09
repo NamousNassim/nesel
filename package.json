@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "NEXT_PRIVATE_BUILD_TURBOPACK=0 next dev",
-    "build": "NEXT_PRIVATE_BUILD_TURBOPACK=0 next build",
+    "build": "NEXT_TURBOPACK=0 NEXT_PRIVATE_BUILD_TURBOPACK=0 next build --no-turbo",
     "start": "NODE_ENV=production node server.js",
     "lint": "eslint"
   },
