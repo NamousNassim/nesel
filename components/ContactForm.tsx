@@ -92,7 +92,7 @@ export default function ContactForm() {
             {...register('phone')}
             type="tel"
             className="mt-2 w-full rounded-2xl border border-[color:var(--line)] px-3 py-2 text-sm shadow-sm focus:ring-2 focus:ring-[color:var(--brand)]"
-            placeholder="+212 6XX XXX XXX"
+            placeholder="+212 661-305081"
           />
         </div>
 

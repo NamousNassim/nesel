@@ -28,7 +28,7 @@ export default function MentionsLegalesPage() {
             <h2 className="font-display text-2xl text-[color:var(--ink)]">Éditeur du site</h2>
             <p className="text-sm text-[color:var(--muted)]">
               NESEL – Services d’affaires au Maroc. Siège administratif : Marrakech, Royaume du Maroc. Contact :
-              contact@nesel.ma – +212 5 24 00 00 00.
+              contact@nesel.ma – +212 661-305081.
             </p>
           </div>
         </Reveal>

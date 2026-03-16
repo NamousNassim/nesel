@@ -23,7 +23,7 @@ const contactCards = [
   },
   {
     title: 'Téléphone',
-    detail: '+212 5 24 00 00 00',
+    detail: '+212 661-305081',
     icon: PhoneIcon,
   },
   {

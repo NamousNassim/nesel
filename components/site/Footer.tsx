@@ -24,7 +24,7 @@ export default function Footer() {
             </div>
             <div>
               <p className="text-sm uppercase tracking-[0.28em] text-white/70">Hotline implantation</p>
-              <p className="font-display text-xl">+212 5 24 00 00 00</p>
+              <p className="font-display text-xl">+212 661-305081</p>
             </div>
           </div>
           <Link
@@ -68,7 +68,7 @@ export default function Footer() {
           <p className="text-sm font-semibold text-white">Contact</p>
           <div className="text-sm text-white/70">
             <p>contact@nesel.ma</p>
-            <p>+212 5 24 00 00 00</p>
+            <p>+212 661-305081</p>
             <p className="mt-2">Lundi – Vendredi, 9h à 18h</p>
           </div>
         </div>

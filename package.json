@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "NEXT_PRIVATE_BUILD_TURBOPACK=0 next dev",
-    "build": "NEXT_TURBOPACK=0 NEXT_PRIVATE_BUILD_TURBOPACK=0 next build --no-turbo",
-    "start": "NODE_ENV=production node server.js",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {

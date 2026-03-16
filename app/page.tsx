@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 import {
   BuildingOffice2Icon,
@@ -19,6 +18,7 @@ import Hero from '@/components/Hero';
 import Reveal from '@/components/site/Reveal';
 import CTASection from '@/components/site/CTASection';
 import { PlanCard } from '@/components/site/PlanCard';
+import SpacesCarousel from '@/components/site/SpacesCarousel';
 
 export const metadata: Metadata = {
   title: 'Accueil',
@@ -131,6 +131,30 @@ const reasons = [
     title: 'Réactivité sous 48h',
     description: 'Engagement de réponse rapide sur les demandes prioritaires.',
     icon: BoltIcon,
+  },
+];
+
+const spacesSlides = [
+  {
+    src: '/photos/meeting-room.jpg',
+    alt: 'Salle de réunion vitrée NESEL',
+    title: 'Salle de réunion vitrée',
+    description: 'Espaces lumineux et équipes sur place pour accueillir vos rendez-vous et vos clients.',
+    badge: 'Réception clients',
+  },
+  {
+    src: '/photos/team.jpg',
+    alt: 'Équipe NESEL au bureau',
+    title: 'Équipe présente sur site',
+    description: 'Accueil bilingue, assistance opérationnelle et relais administratif pour votre société.',
+    badge: 'Équipe FR / EN',
+  },
+  {
+    src: '/photos/casablanca-building.jpg',
+    alt: 'Immeuble d’affaires à Casablanca',
+    title: 'Adresses business premium',
+    description: 'Des implantations à Marrakech et Casablanca pour recevoir partenaires, clients et équipes.',
+    badge: 'Casablanca & Marrakech',
   },
 ];
 
@@ -255,55 +279,10 @@ export default function Home() {
             <span className="text-sm text-[color:var(--muted)]">Visuels réels de nos espaces et de l’équipe.</span>
           </div>
         </Reveal>
-        <div className="mt-8 grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="mt-8">
           <Reveal>
-            <div className="relative overflow-hidden rounded-3xl border border-[color:var(--line)] bg-white shadow-sm">
-              <Image
-                src="/photos/meeting-room.jpg"
-                alt="Salle de réunion vitrée NESEL"
-                width={1200}
-                height={800}
-                className="h-full w-full object-cover"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-              <p className="absolute left-4 bottom-4 rounded-full bg-white/85 px-3 py-1 text-xs font-semibold text-[color:var(--ink)] shadow-sm">
-                Salles de réunion prêtes à l’emploi
-              </p>
-            </div>
+            <SpacesCarousel slides={spacesSlides} />
           </Reveal>
-          <div className="grid gap-5">
-            <Reveal delay={0.05}>
-              <div className="relative overflow-hidden rounded-3xl border border-[color:var(--line)] bg-white shadow-sm">
-                <Image
-                  src="/photos/team.jpg"
-                  alt="Équipe NESEL au bureau"
-                  width={800}
-                  height={600}
-                  className="h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent" />
-                <p className="absolute left-3 bottom-3 rounded-full bg-white/85 px-3 py-1 text-xs font-semibold text-[color:var(--ink)] shadow-sm">
-                  Équipe bilingue FR / EN sur site
-                </p>
-              </div>
-            </Reveal>
-            <Reveal delay={0.08}>
-              <div className="relative overflow-hidden rounded-3xl border border-[color:var(--line)] bg-white shadow-sm">
-                <Image
-                  src="/photos/casablanca-building.jpg"
-                  alt="Immeuble d’affaires à Casablanca"
-                  width={800}
-                  height={520}
-                  className="h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                <p className="absolute left-3 bottom-3 rounded-full bg-white/85 px-3 py-1 text-xs font-semibold text-[color:var(--ink)] shadow-sm">
-                  Adresses Casablanca & Marrakech
-                </p>
-              </div>
-            </Reveal>
-          </div>
         </div>
       </section>
 

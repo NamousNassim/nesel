@@ -2,7 +2,7 @@ import { Company, NavItem } from '@/types';
 
 export const COMPANY_INFO: Company = {
   name: 'NESEL',
-  description: 'Services professionnels d\'entreprise à Marrakech et Casablanca',
+  description: "Services professionnels d'entreprise à Marrakech et Casablanca",
   address: {
     street: '74 Ave My Rachid, Mjadli Building',
     city: 'Guéliz, Marrakech',
@@ -10,20 +10,20 @@ export const COMPANY_INFO: Company = {
     postalCode: '40000',
   },
   contact: {
-    phone: '+212 5XX XX XX XX',
+    phone: '+212 661-305081',
     email: 'contact@ne-sel.com',
     website: 'https://ne-sel.com',
   },
   services: [
     {
       id: 'domiciliation',
-      title: 'Domiciliation d\'Entreprise',
+      title: "Domiciliation d'Entreprise",
       description: 'Services de domiciliation professionnelle pour votre entreprise au Maroc',
       features: [
         'Adresse commerciale prestigieuse',
         'Réception du courrier',
         'Permanence téléphonique',
-        'Salles de réunion disponibles'
+        'Salles de réunion disponibles',
       ],
     },
     {
@@ -34,7 +34,7 @@ export const COMPANY_INFO: Company = {
         'Choix de la forme juridique',
         'Rédaction des statuts',
         'Démarches administratives',
-        'Immatriculation au registre de commerce'
+        'Immatriculation au registre de commerce',
       ],
     },
     {
@@ -45,7 +45,7 @@ export const COMPANY_INFO: Company = {
         'Gestion administrative courante',
         'Traitement des documents',
         'Suivi des démarches officielles',
-        'Conseil et accompagnement'
+        'Conseil et accompagnement',
       ],
     },
   ],
@@ -61,7 +61,7 @@ export const NAVIGATION_ITEMS: NavItem[] = [
 export const SOCIAL_LINKS = {
   website: 'https://ne-sel.com',
   email: 'mailto:contact@ne-sel.com',
-  phone: 'tel:+212524XXXXXX',
+  phone: 'tel:+212661305081',
 };
 
 export const CITIES = {
